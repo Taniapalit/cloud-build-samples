@@ -15,19 +15,21 @@
 package main
 
 import (
-	"fmt"
-	"log"
-	"net/http"
-
-	"github.com/gorilla/mux"
+    "fmt"
+    "log"
+    "net/http"
 )
 
-func homeLink(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Welcome home!")
+func homePage(w http.ResponseWriter, r *http.Request){
+    fmt.Fprintf(w, "Welcome to the HomePage!")
+    fmt.Println("Endpoint Hit: homePage")
+}
+
+func handleRequests() {
+    http.HandleFunc("/", homePage)
+    log.Fatal(http.ListenAndServe(":10000", nil))
 }
 
 func main() {
-	router := mux.NewRouter().StrictSlash(true)
-	router.HandleFunc("/", homeLink)
-	log.Fatal(http.ListenAndServe(":8080", router))
+    handleRequests()
 }
