@@ -12,29 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.example.hellospring;
+package main
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import "log"
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-
-@SpringBootTest
-class HelloSpringApplicationTests {
-
-	@Test
-	void contextLoads() {
-	}
-
-	@Test
-	void greetingShown() {
-		String bannerString=HelloSpringApplication.getBanner("ANSI");
-		assertTrue(bannerString.contains("Hello from Google Cloud!"));
-		}
-
-	@Test
-	void emojiGreetingShown() {
-		String bannerString=HelloSpringApplication.getBanner("emoji");
-		assertTrue(bannerString.contains("Hello from Google Cloud!"));
-		}		
+func main() {
+	log.Println("I'm go-rest, nice to meet you!")
 }
