@@ -1,0 +1,13 @@
+package api
+
+import "github.com/gorilla/mux"
+
+type API struct {
+	router *mux.Router
+}
+
+func NewAPI() *API {
+	return &API{
+		router: mux.NewRouter(),
+	}
+}
